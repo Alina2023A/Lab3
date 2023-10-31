@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Перевірка на парність чи непарність</title>
+</head>
+<body>
+    <h1>Перевірка на парність чи непарність</h1>
+
+    <label for="number">Введіть число:</label>
+    <input type="text" id="number" placeholder="Введіть число">
+    <button onclick="checkParity()">Перевірити</button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkParity() {
+            var number = parseInt(document.getElementById("number").value);
+            var resultElement = document.getElementById("result");
+
+            if (isNaN(number)) {
+                resultElement.innerHTML = "Введено некоректне число.";
+            } else {
+                if (number % 2 === 0) {
+                    resultElement.innerHTML = number + " є парним числом.";
+                } else {
+                    resultElement.innerHTML = number + " є непарним числом.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

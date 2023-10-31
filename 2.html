@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Обчислення периметра і площі кола</title>
+</head>
+<body>
+    <h1>Обчислення периметра і площі кола</h1>
+
+    <label for="radius">Введіть радіус кола:</label>
+    <input type="text" id="radius" placeholder="Введіть радіус">
+    <button onclick="calculateCircle()">Обчислити</button>
+
+    <div id="results"></div>
+
+    <script>
+        function calculateCircle() {
+            var radius = parseFloat(document.getElementById("radius").value);
+            var results = document.getElementById("results");
+
+            if (isNaN(radius)) {
+                results.innerHTML = "Ви ввели некоректне число для радіусу.";
+            } else {
+                var perimeter = 2 * Math.PI * radius;
+                var area = Math.PI * Math.pow(radius, 2);
+                results.innerHTML = "Периметр кола: " + perimeter.toFixed(2) + "<br>Площа кола: " + area.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
